@@ -12,8 +12,8 @@ function bindButtons() {
 			if (request.status >= 200 && request.status < 400) {
 				dataIn = JSON.parse(request.responseText);
 
-				//var array  = getAsteroidArray(dataIn, date);
-				//printAsteroidDetails(array);
+				var array  = getAsteroidArray(dataIn, date);
+				printAsteroidDetails(array);
 			} 
 			else {
 				console.log('Error. The data could not be retrieved.');
