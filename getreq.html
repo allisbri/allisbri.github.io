@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+	<!--Bootstrap meta tags-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>NASA API How-To Guide</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  </head>
+  <body>
+  
+	<!--container keeps content in page center-->
+	<div class="container">
+		</br>
+		<div class="jumbotron text-center">
+			<div class="container">
+				<h1>NASA API How-To Guide</</h1>
+			</div>
+			<a href="apodresp.html" class="btn btn-primary pull-right" role="button">NEXT</a>
+		</div>
+		
+		<h1 class="page-header">GET the Data</h1>
+		<p>A GET request is a request that is sent to NASA's server which returns the data that you 
+			request. GET requests are sent through the URL. For all of the data that we will request 
+			from NASA, we will be using GET requests. 
+			In order to ensure that we are capable of making a basic GET request and using the 
+			data obtained from it, let's test out one of the more popular functions of the NASA API. 
+			We'll make a call to the server in order to retrieve and display the NASA image of the day. 
+			We will need HTML and JavaScript for this process. Below, you can find the code in a 
+			JSFiddle example:
+		</p>
+		
+		<script async src="http://jsfiddle.net/allisbri/g3ogsfo9/embed/js,html/"></script>
+		<h3 class="page-header">HTML for APoD</h3>
+		<p>First take a look at the HTML in the above code by clicking the HTML tab. We can see that the 
+		html body is relatively simple. We have a place for the image title, the image, and the image description. 
+		The text content for the description and the title start out as empty fields in the HTML doc. 
+		We are going to be filling this information in via our javascript code.</p>
+		
+		<h3 class="page-header">JavaScript for APoD</h3>
+		<p>Now, take a look at the request variable in the javascript code. This is what we will be sending to NASA 
+		so that the server knows what to send back. Before we can send the request though, we have to specify what 
+		information we are requesting. This is a GET request, which means we are sending the request
+		as a URL. So, <mark>request.open("GET", url + apiKey, true)</mark>, is specifying that this is a GET request and providing 
+		the URL. The URL that we need to use is provided from NASA on the API site, <a href="https://api.nasa.gov/api.html#apod">HERE.</a>
+		However, we have to add our api key to this as well. That's why <mark>?api_key=</mark> is added to the request. 
+		The actual apiKey that I used has been withheld from this tutorial, but all you need to do is fill in the right side of 
+		the apiKey variable with your own key. 
+		</br></br>
+		You will also notice that the last argument of the request.open method call is "true". 
+		This means that we are making an asynchronous request. An asynchronous request allows for other processes to occur before the 
+		response is received. Asynchronous requests are made because the requests can take a long time to process, and it can impair 
+		the appearance and function of the website if all processing halts until the response is received. That is why an event listener 
+		is added to the request. So that, when the response is received, the last argument, which is a function, is called. When this 
+		function is called, it evaluates whether the response status was between 200 and 400 (no errors occurred). If no errors occurred, 
+		then we can start populating the page with elements from the response that we received. NASA's API doesn't seem to provide a lot 
+		of information about the response, so let's take a look at it.</p>
+		
+		<a href="apodresp.html" class="btn btn-primary pull-right" role="button">NEXT</a>
+	</div>
+  </body>
+</html>

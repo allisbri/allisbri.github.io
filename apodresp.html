@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+	<!--Bootstrap meta tags-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>NASA API How-To Guide</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  </head>
+  <body>
+  
+	<!--container keeps content in page center-->
+	<div class="container">
+		</br>
+		<div class="jumbotron text-center">
+			<div class="container">
+				<h1>NASA API How-To Guide</</h1>
+			</div>
+			<a href="neows.html" class="btn btn-primary pull-right" role="button">NEXT</a>
+		</div>
+		
+		
+		<h1 class="page-header">APoD Response</h1>
+		<script async src="http://jsfiddle.net/allisbri/s4gt23vx/embed/js,html/"></script>
+		</br></br>
+		<p>You can view what the response contains by adding <mark>console.log(dataIn);</mark> after 
+			<mark>var dataIn = JSON.parse(request.responseText);</mark> 
+			as provided in the above JavaScript code. Hitting f12 in most browsers will bring up
+			the console window. <mark>JSON.parse();</mark> is used to parse the response 
+			into a format that allows us to access the properties that we need. If you are not familiar with JSON, 
+			you can learn about it <a href="https://www.w3schools.com/js/js_json_intro.asp">HERE</a>	
+		</br></br>
+			Keep in mind that dataIn is the variable that we have assigned the response to. 
+			By opening the browsers console window after opening the page that implements our 
+			APoD code, we can see that the response has the following properties, all containing 
+			strings of some sort:	
+		</p>
+		
+		<img class="thumbnail" src="images/GETimage.png">
+		<div>Note: The response information shown in the image above will not match yours because it occurred
+		on a different day.</div>
+		
+		<p>These properties are what we will access in order to populate a webpage with the title, 
+			image, and, description. The code example shows that this is done using 
+			the <mark>document.getElementById()</mark> method and setting the proper HTML property equal to the 
+			proper response property. If we get an error and the response we expect is not received, 
+			then an error message will show up in place of the title. 
+			</br></br>
+			Notice that we do not actually send the request until after the event listener is added to the 
+			request. The code contained by the function that is an argument of <mark>addEventListener</mark>, 
+			does not actually get executed until a response is received. 
+			</br></br>
+			You can view the results of the APoD code that we discussed, <a href="DemoFiles/nasaImg.html">HERE</a>.
+		</p>
+		
+		
+		
+		<a href="neows.html" class="btn btn-primary pull-right" role="button">NEXT</a>
+	</div>
+  </body>
+</html>

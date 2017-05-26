@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+	<!--Bootstrap meta tags-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>NASA API How-To Guide</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  </head>
+  <body>
+  
+	<!--container keeps content in page center-->
+	<div class="container">
+		</br>
+		<div class="jumbotron text-center">
+			<div class="container">
+				<h1>NASA API How-To Guide</</h1>
+			</div>
+			<a href="index.html" class="btn btn-primary pull-right" role="button">HOME</a>
+		</div>
+		
+		<h1 class="page-header">Library Functions</h1>
+		<p>We are going to develope functions to help us display each asteroid's name and its distance from the earth, 
+		in a table, on a webpage. The first thing that might help us to do this, is to have direct 
+		access to an array that contains the information for each asteroid. The function below returns 
+		the array that we want. This array prevents us from having to retype 
+		<mark>response.near_earth_objects[date][i]</mark> each time we want to access one of the asteroid objects, 
+		by creating a new array, of which each index has a single asteroid object.</p>
+			
+		<h3 class="page-header">Array Function</h3>
+		<script async src="http://jsfiddle.net/allisbri/b61h4gg7/embed/js/"></script>
+		
+		<h3 class="page-header">Get Functions</h3>
+		<p>Now we will develop some functions to iterate through the array and 
+		print the data we want to a webpage. Since we want the name and distance of 
+		the asteroids, let's start with some functions that return that info.
+		</p>
+			
+		<script async src="http://jsfiddle.net/allisbri/06200t52/1/embed/js/"></script>
+		
+		<h3 class="page-header">Print Function</h3>
+		<p>Now that we have some functions to return the info we want, let's write a function 
+		that iterates through the array, calls these functions, and uses the returned data to 
+		create a table on our webpage.	
+		</p>
+		
+		<script async src="http://jsfiddle.net/allisbri/u51njv1o/1/embed/js/"></script>
+		
+		<p>The <mark>printAsteroidDetails</mark> function starts out by setting up our table elements. 
+		The function then iterates through the array, each time calling the name and distance 
+		functions and adding the returned information to the corresponding cells for that row. 
+		The end result is a complete table with 2 columns and a number rows equal to 
+		the number of asteroids in our array. 
+		You can view an example of my page that implements these functions, <a href="DemoFiles/nasaNeo.html">HERE.</a>
+		That's the end of the tutorial. Check out <a href="https://api.nasa.gov/api.html#authentication">https://api.nasa.gov/api.html#authentication</a>
+		for more information about other things you can do with NASA's API. 
+		</p>
+	
+		<a href="index.html" class="btn btn-primary pull-right" role="button">HOME</a>
+	</div>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+	<!--Bootstrap meta tags-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>NASA API How-To Guide</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  </head>
+  <body>
+  
+	<!--container keeps content in page center-->
+	<div class="container">
+		</br>
+		<div class="jumbotron text-center">
+			<div class="container">
+				<h1>NASA API How-To Guide</</h1>
+			</div>
+			<a href="libexp.html" class="btn btn-primary pull-right" role="button">NEXT</a>
+		</div>
+		
+		<h1 class="page-header">Asteroids - Near Earth Objects Web Service</h1>
+		<p>Now, that we understand how to make asynchronous GET requests and deal with data sent 
+			back from the NASA server, let's do something a little more exciting. Let's make a GET request 
+			in order to obtain data about near-earth asteroids and develop some functions that can help us 
+			make use of that data. 
+			</br></br>
+			NeoWs is part of NASA's API. It stands for Near Earth Object Web Service. This service 
+			allows us to make a GET request and retrieve information about asteroids that are near 
+			earth on specific dates. We want to allow a user to provide a date via a form, press 
+			a button in order to implement the request, and see some information about asteroids 
+			that were close to earth that day. Our GET request is going to look a little bit 
+			different this time. 
+		</p>
+		
+		<script async src="http://jsfiddle.net/allisbri/9mLzLLom/2/embed/js,html/"></script>
+		
+		<p>If you look at the HTML above, you can see that we have a form where the user can enter a date. 
+			The date should be entered in the format "yyyy-mm-dd". The text in the date field is then 
+			assigned to the date variable in our JavaScript code. Then, we combine our string variables 
+			to create a URL based on the instructions specified on NASA's
+			<a href="https://api.nasa.gov/api.html#NeoWS">NeoWs Page</a>.
+
+			</br></br>
+			Note: You might notice that the API tells us to specify a start and end date, which allows us 
+			to get back information about near earth objects that span more than a single day. 
+			We are using a single date for both the start and end date in order to keep things simple. 
+			</br></br>
+			The data that you get back from this request is actually quite complex. As is shown from 
+			the console image below, the response contains multiple layers of objects and properties, 
+			and the objects that we are interested in are within the array called '2016-10-20' 
+			(the date the user entered) within the 'near_earth_objects' object.
+		</p>
+		
+		<img class="thumbnail" src="images/neowsimage.png">
+		
+		<p>Right now, we just want the details about asteroids that came close to earth on that day. 
+			It might be useful to know what their names were and how close they came to 
+			the earth. The response provides all of this information for us, so let's develop some functions 
+			that will allow us to iterate through an array, and get the information that we want.	
+		</p>
+		
+		<a href="libexp.html" class="btn btn-primary pull-right" role="button">NEXT</a>
+	</div>
+  </body>
+</html>
